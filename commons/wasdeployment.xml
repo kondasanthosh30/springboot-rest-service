@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="LogViewEar Application Deployment" default="build-all" basedir=".">
+<!--global properties-->
+<property name="hostName" value="localhost"/>
+<property name="connType" value="SOAP"/>
+<property name="port" value="8880"/>
+<property name="userId" value="wasadmin"/>
+<property name="password" value="wasadmin"/>
+<property name="deployEar.dir" value="path of ear"/>
+<property name="appName" value="EARNAME(application name)"/>
+<property name="earFile" value="EARNAME.ear"/>
+<property name="wasHome.dir" value="C:/IBM/Websphere/Appserver"/>
+<property name="profileName" value="Profilename(which profile you wants to run)"/>
+<property name="profile" value="name of profile"/>
+
+
+<!--mbean declarations-->
+<taskdef name="wsUninstallApp" classname="com.ibm.websphere.ant.tasks.UninstallApplication"/>
+<taskdef name="wsInstallApp" classname="com.ibm.websphere.ant.tasks.InstallApplication"/>
+
+
+<!--installation Target-->
+<target name="installEAR">
+<echo message="Deployable EAR File found at:${deployEar.dir}/${deployEar}"/>
+<wsInstallApp ear="${deployEar.dir}/${earFile}"
+options="-appname ${appName}"
+wasHome="${wasHome.dir}"
+connType="${connType}"
+port="${port}"
+host="${hostName}"
+profileName="${profileName}"/>
+</target>
+
+
+
+<target name="updateEAR">
+<echo message="Deployable EAR File found at:${deployEar.dir}/${deployEar}"/>
+<wsInstallApp ear="${deployEar.dir}/${earFile}"
+options="-appname ${appName}"
+wasHome="${wasHome.dir}"
+connType="${connType}"
+port="${port}"
+host="${hostName}"
+profileName="${profileName}"/>
+</target>
+
+
+<target name="build-all" depends="installEAR">
+</target>
+
+
+</project>
+
+<!-- 
+<Install Ear>
+
+ws_ant.bat -f pathfor\this.xml installEAR
+
+<update Ear>
+ws_ant -f patsfor\this.xml updateEAR
+
+<Install some other project>
+create other .xml
+ -->

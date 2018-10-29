@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.springframework.ide.eclipse.boot.launch">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="path of mail class////main.java"/>
+</listAttribute>
+
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+
+<!--values passing in environmentVariables -->
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="someusername" value="username"/>
+<mapEntry key="password"  value="somePassword"/>
+<mapEntry key="server.port" value="portnumber"/>
+<mapEntry key="spring.profile.active" value="default"/>
+<mapEntry key="keystore value"   value="fjhfjfb some key here"/>
+</mapAttribute>
+
+
+
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.somepackage.MainClassName"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="projectname"/>
+<stringAttribute key="process_factory_id" value="org.springframework.ide.eclipse.boot.launch.process.BootProcessFactory"/>
+<stringAttribute key="spring.boot.ansi.console" value="true"/>
+<stringAttribute key="spring.boot.dash.hidden" value="false"/>
+<stringAttribute key="spring.boot.debug.enable" value="true"/>
+<stringAttribute key="spring.boot.debug.termination.timeout" value="16000"/>
+<stringAttribute key="spring.boot.livebean.enable" value="true"/>
+<stringAttribute key="spring.boot.livebean.port" value="0"/>
+<stringAttribute key="spring.boot.profile" value=""/>
+
+
+
+</launchConfiguration>
+
