@@ -1,41 +1,98 @@
 package springbootrestservice.springbootrestdemo.vo;
 
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="student")
 public class Student 
 {
-
-	private String id;
-	private String name;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	@Column(name="firstName")
+	private String firstName;
+	@Column(name="lastName")
+	private String lastName;
+	@Column(name="dob")
+	private String dob;
+	@Column(name="phoneNumber")
+	private String phoneNumber;
+	@Column(name="gender")
 	private String gender;
-	public String getId() {
-		return id;
+	
+	/*@OneToMany(mappedBy="stud")
+	private List<Courses> cour;*/
+	
+	public Student()
+	{
+		
 	}
-	public void setId(String id) {
-		this.id = id;
+
+	public String getFirstName() {
+		return firstName;
 	}
-	public String getName() {
-		return name;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public String getLastName() {
+		return lastName;
 	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public Student() {
+
+	public Student(String firstName, String lastName, String dob, String phoneNumber, String gender) {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Student(String id, String name, String gender) {
-		super();
-		this.id = id;
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.phoneNumber = phoneNumber;
 		this.gender = gender;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 }
