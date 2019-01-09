@@ -1,0 +1,41 @@
+# defult profile will be used if not specfied
+# Specify boolean and numeric values in quotes(Java code not read  these values if not specified in quotes)
+----
+spring:
+      profiles:dev,default
+      application:
+        name:springmvcdemo
+        
+        
+ logging:
+      level:
+        org.springframework.ws.client.MessageTracing.sent:TRACE
+        org.springframework.ws.client.MessageTracing.received:TRACE
+        org.springframework.ws.client.MessageTracing:TRACE
+        
+ server:
+ port:
+ servlet:
+        context-path:
+    
+#other services details 
+-----    
+ ----
+spring:
+      profiles:test
+      application:
+        name:springmvcdemo
+        
+        
+ logging:
+      level:
+        org.springframework.ws.client.MessageTracing.sent:TRACE
+        org.springframework.ws.client.MessageTracing.received:TRACE
+        org.springframework.ws.client.MessageTracing:TRACE
+        
+ server:
+ port:8088
+ servlet:
+        context-path:
+    
+#other services details 
